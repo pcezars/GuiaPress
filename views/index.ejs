@@ -1,6 +1,29 @@
 <%- include('partials/header') %>
+<%- include('partials/homenavbar') %>
 <body>
-    <h1>Testando as views</h1>
+    <div class="container">
+
+        <div class="jumbotron mt-2">
+            <h1 class="display-4">Bem-vindo</h1>
+            <p class="lead">Este é um simples blog para aprendizagem.</p>
+            <hr class="my-4">
+            <p>Projeto Blog do clan One Way criado utilizando NodeJs, feito por questões de aprendizagem e desenvolvido do zero por Paulo Cézar.</p>
+            <a href="https://www.linkedin.com/in/pcezars/" target="_blank"><i class="fa-brands fa-linkedin fa-bounce fa-xl"></i></a>
+            <a href="https://github.com/pcezars" target="_blank"><i class="fa-brands fa-github fa-bounce fa-xl"></i></a>
+          </div>
+
+
+        <% articles.forEach(article => { %>
+            <div class="card mb-1">
+                <div class="card-header">
+                    <h2><%= article.title %></h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-success" href="/<%= article.slug %>">Ler Artigo</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </body>
 
 <%- include('partials/footer') %>
