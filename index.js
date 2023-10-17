@@ -94,6 +94,8 @@ app.get("/category/:slug", (req, res) => {
     })
 })
 
-app.listen(8000, () => {
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
     console.log("Servidor executado!");
 });
